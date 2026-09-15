@@ -1,0 +1,42 @@
+# IDEs e editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Java / builds
+*.class
+target/
+build/
+.gradle/
+.gradle-cache/
+out/
+
+# Ambiente
+.env
+.env.*
+
+# Logs e temporários
+*.log
+*.tmp
+*.swp
+
+# Arquivos de pacote/registros
+*.jar
+*.war
+*.ear
+
+# Não ignorar arquivos importantes de configuração do projeto
+!gradlew
+!gradlew.bat
+!settings.gradle
+!settings.gradle.kts
+!pom.xml
+!build.gradle
+!build.gradle.kts
+!gradle.properties
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
