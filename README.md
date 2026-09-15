@@ -9,6 +9,7 @@ UniRide é um aplicativo de caronas entre estudantes da PUC-Campinas, criado par
 - João Gabriel Altarujo
 - Leonardo Carlos Barboza Filho
 - Tonianni Leitão Calsolari
+- Victor Hugo Asvolinsque
 
 ## Projeto
 
