@@ -15,3 +15,14 @@ Projeto Integrador - 2026/2
 
 Turma: 0101
 Grupo: 02
+
+## Como rodar
+
+O servidor (Java) e as telas web ficam em [`servidor/`](servidor/README.md):
+
+```bash
+cd servidor
+mvn compile exec:java
+```
+
+Depois acesse http://localhost:8080.
