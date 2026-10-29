@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME:-uniride}
+      POSTGRES_USER: ${DB_USERNAME:-uniride_app}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env}
+    volumes:
+      - uniride_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend2:
+    build:
+      context: ../pi4-0101-g2-backend-2
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    healthcheck:
+      test: ["CMD-SHELL", "kill -0 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend1:
+    build:
+      context: ../pi4-0101-g2-backend-1
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-uniride}
+      DB_USERNAME: ${DB_USERNAME:-uniride_app}
+      DB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env}
+      BACKEND2_HOST: backend2
+      BACKEND2_PORT: 3000
+      SPRING_PROFILES_ACTIVE: demo
+      TZ: America/Sao_Paulo
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      backend2:
+        condition: service_healthy
+
+volumes:
+  uniride_postgres:

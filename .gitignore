@@ -18,6 +18,7 @@ out/
 # Ambiente
 .env
 .env.*
+!.env.example
 
 # Logs e temporários
 *.log
