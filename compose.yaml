@@ -36,6 +36,7 @@ services:
       BACKEND2_HOST: backend2
       BACKEND2_PORT: 3000
       SPRING_PROFILES_ACTIVE: demo
+      TZ: America/Sao_Paulo
     ports:
       - "8080:8080"
     depends_on:
