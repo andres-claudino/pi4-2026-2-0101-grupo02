@@ -79,15 +79,29 @@ Serviços e portas:
 | Backend 2 | 3000/TCP | Ranking de compatibilidade |
 | Backend 1 | 8080/HTTP | API consumida pelo Flutter |
 
-O profile `demo`, usado somente pelo Compose, cria dados idempotentes:
+O profile `demo`, usado somente pelo Compose, cria dados idempotentes. Todas as
+contas abaixo usam a senha `Demo123!`:
 
-| Perfil | Identificador | Senha |
-|---|---|---|
-| Motorista | `motorista.demo@puccampinas.edu.br` ou `90000001` | `Demo123!` |
-| Passageira | `passageira.demo@puccampinas.edu.br` ou `90000002` | `Demo123!` |
-| Passageiro | `passageiro.demo@puccampinas.edu.br` ou `90000003` | `Demo123!` |
+| Perfil | Nome | E-mail | RA |
+|---|---|---|---|
+| Motorista | Lucas Almeida | `lucas.almeida@puccampinas.edu.br` | `91000001` |
+| Motorista | Mariana Costa | `mariana.costa@puccampinas.edu.br` | `91000002` |
+| Motorista | Rafael Martins | `rafael.martins@puccampinas.edu.br` | `91000003` |
+| Motorista | Beatriz Souza | `beatriz.souza@puccampinas.edu.br` | `91000004` |
+| Motorista | Gabriel Oliveira | `gabriel.oliveira@puccampinas.edu.br` | `91000005` |
+| Passageira | Ana Ferreira | `ana.ferreira@puccampinas.edu.br` | `91000006` |
+| Passageiro | Pedro Lima | `pedro.lima@puccampinas.edu.br` | `91000007` |
+| Passageira | Camila Rocha | `camila.rocha@puccampinas.edu.br` | `91000008` |
+| Passageiro | Felipe Santos | `felipe.santos@puccampinas.edu.br` | `91000009` |
+| Passageira | Julia Ribeiro | `julia.ribeiro@puccampinas.edu.br` | `91000010` |
+| Passageiro | Thiago Nunes | `thiago.nunes@puccampinas.edu.br` | `91000011` |
 
-Também são criadas duas caronas futuras coerentes com o modelo de sentido, campus e ponto variável. A inicialização normal, sem o profile `demo`, não cria dados fictícios.
+O conjunto demonstrativo contém 12 caronas futuras disponíveis, distribuídas
+entre os dois sentidos e os dois campi, cinco caronas concluídas e uma carona
+cancelada. Também inclui 22 solicitações em diferentes estados, 15 avaliações e
+20 notificações para permitir a demonstração dos fluxos do MVP. As datas são
+calculadas em relação ao dia de execução. A inicialização normal, sem o profile
+`demo`, não cria dados fictícios.
 
 Confirme a API abrindo `http://localhost:8080/caronas`. Para encerrar:
 
